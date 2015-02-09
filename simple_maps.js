@@ -29,6 +29,9 @@ var mapsId = [
 					google.maps.MapTypeId.TERRAIN
 					];
 					
+//geocoder
+var geocoder;
+					
 /** Function for map initialization			 
  * @param myLat starting latitude for map
  * @param myLon starting longitude for map
@@ -194,6 +197,40 @@ function drawMarker(myTitle, lat, lon, img, callback)
     //Setting the callback
 	google.maps.event.addListener(marker, 'click', callback);				 
 				 				  
+}
+
+/** Function for add marker on map
+ * @param myTitle a title for marker
+ * @param loc a string that rapresents a location
+ * @param img path of the image to use
+ * @param callback the callback invoked when marker is clicked
+*/
+function drawMarkerByLoc(myTitle, loc, img, callback)
+{	
+	if(geocoder === null || geocoder === undefined)
+	{
+		geocoder = new google.maps.Geocoder();
+	}
+	var marker;
+	geocoder.geocode( { 'address': loc}, function(results, status) 
+		{
+			if (status == google.maps.GeocoderStatus.OK) 
+			{				
+				map.setCenter(results[0].geometry.location);
+				marker = new google.maps.Marker({
+					map: map,
+					position: results[0].geometry.location,
+					tiyle: myTitle,
+					icon: img
+				});
+				//Setting the callback
+				google.maps.event.addListener(marker, 'click', callback);
+			}
+			else 
+			{
+				alert("Geocode was not successful for the following reason: " + status);
+			}
+		});	   				  
 }
 			
 /**Function for polygon dawning
