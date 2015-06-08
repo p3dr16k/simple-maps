@@ -47,7 +47,7 @@ function initialize(myLat, myLon, myZoom, type, showControls, newMinZoom, newMax
 		  mapTypeId: mapsId[type],
 		  disableDefaultUI: !showControls,
 		  minZoom: newMinZoom,
-		  maxZoom: newMaxZoom 
+		  maxZoom: newMaxZoom,		  
 		};
 		map = new google.maps.Map(document.getElementById('map-container'),	mapOptions);
 					
