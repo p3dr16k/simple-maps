@@ -3,7 +3,7 @@
 *
 *DESCRIPTION:  Simple library for google maps management
 *REQUIREMENTS: javascript google maps v.3 or higher
-*AUTHOR:	   Patrick Facco (faccopatrick@gmail.com), 
+*AUTHOR:	   Patrick Facco (faccopatrick[at]gmail.com), 
 *VERSION:  	   1.0
 *CREATED:      25/09/2014 10:33:46 CEST
 *LICENSE:      GNU/GPLv3
