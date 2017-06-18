@@ -17,5 +17,7 @@ Then you must to include the simple-map library using:
 ```javascript
 <script type="text/javascript" src="/path/to/simplemaps/simple_maps.js"></script>
 ```
+API documentation is available at http://pedrick.altervista.org/simple-map/symbols/_global_.html
+
 Happy Coding!
 
